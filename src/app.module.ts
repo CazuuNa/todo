@@ -7,6 +7,13 @@ import { UserModule } from './user/user.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { PostModule } from './post/post.module';
 import { ConfigModule } from '@nestjs/config';
+import { ModelsController } from './models/models.controller';
+import { ModelsService } from './models/models.service';
+import { ModelsModule } from './models/models.module';
+import { PromptsModule } from './prompts/prompts.module';
+import { ChainsModule } from './chains/chains.module';
+import { AgentsModule } from './agents/agents.module';
+import { MemoryModule } from './memory/memory.module';
 
 @Module({
   imports: [
@@ -19,8 +26,13 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
       envFilePath: '.env',
     }),
+    ModelsModule,
+    PromptsModule,
+    ChainsModule,
+    AgentsModule,
+    MemoryModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, ModelsController],
+  providers: [AppService, ModelsService],
 })
 export class AppModule {}
