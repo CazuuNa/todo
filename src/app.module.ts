@@ -16,6 +16,7 @@ import { AgentsModule } from './agents/agents.module';
 import { MemoryModule } from './memory/memory.module';
 import { RagModule } from './rag/rag.module';
 import { FunctionCallingModule } from './function-calling/function-calling.module';
+import { RagDbModule } from './rag-db/rag-db.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { FunctionCallingModule } from './function-calling/function-calling.modul
     MemoryModule,
     RagModule,
     FunctionCallingModule,
+    RagDbModule,
   ],
   controllers: [AppController, ModelsController],
   providers: [AppService, ModelsService],
