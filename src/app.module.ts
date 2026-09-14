@@ -17,6 +17,8 @@ import { MemoryModule } from './memory/memory.module';
 import { RagModule } from './rag/rag.module';
 import { FunctionCallingModule } from './function-calling/function-calling.module';
 import { RagDbModule } from './rag-db/rag-db.module';
+import { McpClientModule } from './mcp-client/mcp-client.module';
+import { McpAgentModule } from './mcp-agent/mcp-agent.module';
 
 @Module({
   imports: [
@@ -37,6 +39,8 @@ import { RagDbModule } from './rag-db/rag-db.module';
     RagModule,
     FunctionCallingModule,
     RagDbModule,
+    McpClientModule,
+    McpAgentModule,
   ],
   controllers: [AppController, ModelsController],
   providers: [AppService, ModelsService],
